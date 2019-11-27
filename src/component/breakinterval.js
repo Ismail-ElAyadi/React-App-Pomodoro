@@ -1,14 +1,25 @@
-import React from 'react';
+import React from "react";
 
-function BreakInterval(props){
+function BreakInterval(props) {
+    function decreaseCounter() {
+        if (props.breakInterval === 1) {
+            return;
+        }
+        props.decreaseBreak();
+    }
+    function increaseCounter() {
+        if (props.breakInterval === 60) {
+            return;
+        }
+        props.increaseBreak();
+    }
 
-    return(
+    return (
         <section>
-            <button>Down</button>
+            <button onClick={decreaseCounter}>Down</button>
             <p>{props.breakInterval}</p>
-            <button> Up </button>
-
+            <button onClick={increaseCounter}> Up </button>
         </section>
-    )
+    );
 }
-export default BreakInterval
+export default BreakInterval;
