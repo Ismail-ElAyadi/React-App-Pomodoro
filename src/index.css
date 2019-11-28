@@ -21,14 +21,19 @@ align-items: center;
 }
 main{
   width: 100%;
+
+}
+section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
 
-}
-section {
   width: 100%;
   margin: auto;
-  border: 1px solid red;
+
+}
+#root{
+  width:100%;
 }
