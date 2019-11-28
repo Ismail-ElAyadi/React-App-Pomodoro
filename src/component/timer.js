@@ -21,6 +21,23 @@ class Timer extends React.Component {
     decreaseTimer() {
         switch (this.state.timerSecond) {
             case 0:
+                if (this.props.timerMinute === 0) {
+                    if (this.state.isSession) {
+                        this.setState({
+                            isSession: false,
+                        });
+                        this.props.toggleInterval(this.state.isSession);
+
+
+
+                    }
+                } else {
+                    this.setState({
+                        isSession: true,
+                    });
+                    this.props.toggleInterval(this.state.isSession);
+                }
+
                 this.props.updateTimerMinute();
                 this.setState({
                     timerSecond: 59,
@@ -36,18 +53,16 @@ class Timer extends React.Component {
         }
     }
 
-stopTimer(){
-clearInterval(this.state.intervalId)
-}
-resetTimer(){
-    this.stopTimer();
-    this.props.resetTimer();
-    this.setState({
-        timerSecond:0,
-    })
-
-
-}
+    stopTimer() {
+        clearInterval(this.state.intervalId);
+    }
+    resetTimer() {
+        this.stopTimer();
+        this.props.resetTimer();
+        this.setState({
+            timerSecond: 0,
+        });
+    }
     render() {
         return (
             <section>
