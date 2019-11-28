@@ -16,6 +16,7 @@ function BreakInterval(props) {
 
     return (
         <section>
+            <h4>Break Length</h4>
             <button onClick={decreaseCounter}>Down</button>
             <p>{props.breakInterval}</p>
             <button onClick={increaseCounter}> Up </button>
