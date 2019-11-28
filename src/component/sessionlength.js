@@ -16,9 +16,9 @@ function SessionLength(props) {
     return (
         <section>
             <h4>Session Length</h4>
-            <button onClick={decreaseSession}>down</button>
+            <button  disabled={props.isPlay === true ? "disabled" : ""} onClick={decreaseSession}>down</button>
             <p>{props.sessionLength}</p>
-            <button onClick={increaseSession}>up</button>
+            <button disabled={props.isPlay === true ? "disabled" : ""} onClick={increaseSession}>up</button>
         </section>
     );
 }

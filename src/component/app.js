@@ -11,6 +11,7 @@ class App extends React.Component {
             breakLength: 5,
             sessionLength: 25,
             timerMinute: 25,
+            isPlay: false,
         };
         this.onIncreaseBreakLength = this.onIncreaseBreakLength.bind(this);
         this.onDecreaseBreakLength = this.onDecreaseBreakLength.bind(this);
@@ -19,6 +20,8 @@ class App extends React.Component {
         this.onToggleInterval = this.onToggleInterval.bind(this);
         this.onUpdateTimerMinute = this.onUpdateTimerMinute.bind(this);
         this.onResetTimer = this.onResetTimer.bind(this);
+        this.onPlayStopTimer = this.onPlayStopTimer.bind(this);
+
     }
     onIncreaseBreakLength() {
         this.setState(prevState => ({
@@ -65,12 +68,15 @@ class App extends React.Component {
         }
     }
 
-    onResetTimer(){
-
-
+    onResetTimer() {
         this.setState({
-            timerMinute:this.state.sessionLength
-        })
+            timerMinute: this.state.sessionLength,
+        });
+    }
+    onPlayStopTimer(isPlay) {
+        this.setState({
+            isPlay: isPlay,
+        });
     }
     render() {
         return (
@@ -78,6 +84,7 @@ class App extends React.Component {
                 <section>
                     <h2>Pomodorow</h2>
                     <BreakInterval
+                        isPLay={this.state.isPlay}
                         breakInterval={this.state.breakLength}
                         increaseBreak={this.onIncreaseBreakLength}
                         decreaseBreak={this.onDecreaseBreakLength}
@@ -94,6 +101,7 @@ class App extends React.Component {
                     updateTimerMinute={this.onUpdateTimerMinute}
                     toggleInterval={this.onToggleInterval}
                     resetTimer={this.onResetTimer}
+                    onPlayStopTimer={this.onPlayStopTimer}
                 />
             </main>
         );
