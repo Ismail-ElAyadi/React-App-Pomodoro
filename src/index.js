@@ -10,3 +10,13 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+window.setInterval(function(){
+
+    let sec= +document.getElementById('sec').innerHTML
+
+let min = +document.getElementById('min').innerHTML
+document.getElementById('head').innerHTML = `${min}:${sec}`
+    /// call your function here
+  }, 1000);
