@@ -16,12 +16,21 @@ function BreakInterval(props) {
 
     return (
         <section>
-            <h4>Break Length</h4>
-            <button disabled={props.isPlay === true ? "disabled" : ""} onClick={decreaseCounter}>
-                Down
-            </button>
-            <p>{props.breakInterval}</p>
-            <button disabled={props.isPlay === true ? "disabled" : ""} onClick={increaseCounter}> Up </button>
+            <div class="break">
+                <h4>Temps de Pause</h4>
+                <button
+                    disabled={props.isPlay === true ? "disabled" : ""}
+                    onClick={decreaseCounter}>
+                    -
+                </button>
+                <p>{props.breakInterval}</p>
+                <button
+                    disabled={props.isPlay === true ? "disabled" : ""}
+                    onClick={increaseCounter}>
+                    {" "}
+                    +{" "}
+                </button>
+            </div>
         </section>
     );
 }

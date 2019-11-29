@@ -10,15 +10,12 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-document.getElementById('start').addEventListener("click",()=> {
-    window.setInterval(function(){
+document.getElementById("start").addEventListener("click", () => {
+    window.setInterval(function() {
+        let sec = +document.getElementById("sec").innerHTML;
 
-        let sec= +document.getElementById('sec').innerHTML
-
-    let min = +document.getElementById('min').innerHTML
-    document.getElementById('head').innerHTML = `Pomodorow : ${min}:${sec}`
+        let min = +document.getElementById("min").innerHTML;
+        document.getElementById("head").innerHTML = `Pomodorow : ${min}:${sec}`;
         /// call your function here
-      }, 1000);
-
-})
-
+    }, 1000);
+});

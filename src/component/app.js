@@ -21,7 +21,6 @@ class App extends React.Component {
         this.onUpdateTimerMinute = this.onUpdateTimerMinute.bind(this);
         this.onResetTimer = this.onResetTimer.bind(this);
         this.onPlayStopTimer = this.onPlayStopTimer.bind(this);
-
     }
     onIncreaseBreakLength() {
         this.setState(prevState => ({
@@ -81,7 +80,7 @@ class App extends React.Component {
     render() {
         return (
             <main>
-                <section>
+                <section class="firstsection">
                     <h2>Pomodorow</h2>
                     <BreakInterval
                         isPLay={this.state.isPlay}
