@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Description of the App
+This app is a pomodoro app, you can set the time of your work and of your break.
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
